@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Kate Caloia | Designer &amp; Front-End Developer</title>
+    <title>Kate Caloia | Designer &amp; Developer</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta description="">
-    <meta charset="UTF-8">
-     <meta name="description" content="Kate Caloia Designer &amp; Front-End Developer">
     <link rel="stylesheet" type="text/css" href="global-styles.css">
     <link rel="shortcut icon" href="favicon.ico">
     <meta property="og:type" content="website">
@@ -29,7 +27,7 @@
             <div class="container">
                 <h1>Designer &amp; Developer<span>Kate Caloia</span></h1>
                 <ul class="social-links">
-                    <li><a href="https://dribbble.com/katecaloia">Work</a> <span class="thread">/</span></li>
+                    <li><a href="#work">Work</a> <span class="thread">/</span></li>
                     <li><a href="#about-me">About</a><span class="thread">/</span></li>
                     <li><a href="https://twitter.com/katecaloia">Twitter</a><span class="thread">/</span></li>
                     <li><a href="https://www.instagram.com/katecaloia/">Instagram</a></li>
@@ -44,11 +42,80 @@
                     Currently at <a class="link-inverse" href="http://www.webstaurantstore.com/" target="_blank">WebstaurantStore</a>. If I'm not nose deep in code you'll most likely find me biking or buried in a book. Passionately obsessed with Crossfit, Frank Castle, and Flexbox. Find me on social media using <a class="link-inverse" href="https://twitter.com/katecaloia" target="_blank">@katecaloia</a>.
                 </p>
                 <a href="mailto:katecaloia@gmail.com" class="btn-outline">Email Me</a>
-                <a href="https://dribbble.com/katecaloia" class="btn-outline">View Work</a>
+                <a href="#work" class="btn-outline">View Work</a>
+            </div>
+
+
+        </div>
+
+        <div id="work" class="work section section--top-level section--homepage section--center">
+            <div class="work__module">
+                <h3 class="work__title">Homepage Redesign</h3>
+                <div class="work__description">
+                    <p>One of the most challenging redesign's I have worked on to date was the WebstaurantStore homepage. While many users first point of contact with WebstaurantStore isn't necessarily the homepage, it's still an important part of our traffic flow. There were a lot of stakeholders involved in this project and one of our biggest selling points was tailoring the homepage experience to the customer. With recommended products, a status bar for orders, and a category grid with top grossing categories so our customers can find what they need and fast. I reworked all the homepage CSS and markup.</p>
+                </div>
+                <a href="http://www.webstaurantstore.com" class="btn-outline btn-outline--inverse" target="_blank">View Homepage</a>
+                <img class="work__feature" src="img/homepage.png" alt="WebstaurantStore homepage redesign">
+            </div>
+        </div>
+        <div class="work section section--top-level section--fsr section--center">
+            <div class="work__module">
+                <h3 class="work__title">Food Service Resources</h3>
+                <div class="work__description">
+                    <p>Food Service Resources is the home of WebstaurantStore's collective written resources used to inform and educate customers on potential purchases. When this project started our resource center had just begun to expand, launching into infographics, how to's, and in-depth articles. From a customer stand-point this information provides them with expert knowledge from our content team while also builds and backs our reputation as the largest online restaurant equipment supplier. This project required many sketches, a complete markup overhaul, and lots of work to make this flexbox beauty IE foolproof. </p>
+                </div>
+                <a href="http://www.webstaurantstore.com/food-service-resources" class="btn-outline btn-outline--inverse" target="_blank">View Resources</a>
+                <img class="work__feature" src="img/fsr.png" alt="WebstaurantStore Food Service Resources redesign">
+            </div>
+        </div>
+        <div class="work section section--top-level section--product section--center">
+            <div class="work__module">
+                <h3 class="work__title">Product Page Admin &amp; Design</h3>
+                <div class="work__description">
+                    <p>Of all the projects I've worked on at WebstaurantStore, the new product page admin is perhaps my favorite. The essential part of this project was delivering a new product page experience that showcased the extensive in-house product descriptions we provide with photography to compliment. The biggest perk of this was not just a brand new product page but a shiny new admin for our content team. I built an admin tool that allowed our team to mix and match templates, as well as easily reference and pull product features for the 100K+ items we carry. Creating tools that improve everyday life for various departments at WebstaurantStore is the heart of why I love design. </p>
+                </div>
+                <a href="http://www.webstaurantstore.com/servit-20-x-20-x-12-red-soft-sided-heavy-duty-nylon-insulated-pizza-delivery-bag-holds-up-to-6-16-5-18-or-4-20-pizza-boxes/424PZ616RD.html" class="btn-outline" target="_blank">View Product Page</a>
+                <img class="work__feature" src="img/product.png" alt="WebstaurantStore's Product Page redesign">
+            </div>
+        </div>
+        <div class="work section section--top-level section--ac section--center">
+            <div class="work__module">
+                <h3 class="work__title">Series Art</h3>
+                <div class="work__description">
+                    <p>All the mini series work I do is really fun. It's a nice chance to step back and get into my design roots without worrying about code. They usually are 4-week sprints centered around fitting type and producing a keynote presentation. Each theme is unique and it makes for some really fun direction and exploration. Below are just a few of my favorites.</p>
+                </div>
+                <img class="work__feature" src="img/series.png" alt="WebstaurantStore Food Service Resources redesign">
+            </div>
+        </div>
+        <div class="work section section--top-level section--dribbble section--center">
+            <div class="dribbble-shots">
+                <ul class="shots">
+                </ul>
             </div>
         </div>
 
+
 </body>
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="js/jribble-min.js"></script>
+<script>
+
+    $.jribbble.setToken('591bc43147b7b933c775c7ab756f393562148a6c82410cb2271ec1adf05576cb');
+
+    $.jribbble.users('katecaloia').shots({per_page: 12}).then(function(shots) {
+      var html = [];
+
+      shots.forEach(function(shot) {
+        html.push('<li class="work--shots">');
+        html.push('<a href="' + shot.html_url + '" target="_blank">');
+        html.push('<img src="' + shot.images.normal + '">');
+        html.push('</a></li>');
+      });
+
+      $('.shots').html(html.join(''));
+    });
+ </script>
+
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
