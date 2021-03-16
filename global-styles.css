@@ -12,8 +12,8 @@ body {
 
 .wavy {
     text-decoration-line: underline;
-    text-decoration-style: wavy;
-    text-decoration-color: #7CC7C2;
+    text-decoration-style: double;
+    text-decoration-color: #d8cbd0;
 }
 
 .font-pop {
@@ -96,7 +96,7 @@ body {
     flex-direction: column;
     height: 95vh;
     justify-content: center;
-    padding: 0 20px;
+    padding: 0 30px;
 }
 
 .highlight::after {
@@ -109,4 +109,10 @@ body {
     top: 42%;
     width: calc(100% + 1rem);
     z-index: -1;
+}
+
+@media (max-width: 599px) {
+    .container--home {
+        height: auto;
+    }
 }
