@@ -38,7 +38,7 @@ body {
 }
 
 .text-md {
-    font-size: 32px;
+    font-size: 28px;
     line-height: 1.2;
 }
 
@@ -87,21 +87,26 @@ body {
     position: relative;
 }
 
+.self-baseline {
+    align-self: baseline;
+}
+
 .container--home {
     display: flex;
     flex-direction: column;
-    height: 99vh;
+    height: 95vh;
     justify-content: center;
     padding: 0 20px;
 }
 
 .highlight::after {
-    content: '';
+    content: "";
     position: absolute;
     background: #D9E9E8;
-    height: 38px;
-    width: 380px;
-    left: -8px;
-    bottom: 0;
+    height: 35%;
+    left: 0;
+    margin-left: -.5rem;
+    top: 42%;
+    width: calc(100% + 1rem);
     z-index: -1;
 }
