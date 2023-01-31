@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta description="">
-    <link rel="stylesheet" type="text/css" href="global-styles.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="shortcut icon" href="favicon.ico">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Kate Caloia">
@@ -17,13 +17,68 @@
     <meta property="og:locale" content="en_US">
     <meta name="twitter:site" content="@katecaloia">
     <meta name="twitter:card" content="summary">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-97561818-1"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-97561818-1');
+        </script>
+
 </head>
 <body>
-<main>
-<section class="container--home text-left mw-900 mx-auto">
-    <h1 class="font-martel font-bold text-lg mb-1 self-baseline"><span class="relative highlight">kate</span> <span class="relative highlight">caloia</span> </h1>
-    <p class="font-pop font-semi-bold text-md mt-0 mw-600">designer / occasional developer / average diy-er</p>
-    <a href="https://dribbble.com/katecaloia" target="_blank" class="text-red-100 font-pop font-semi-bold wavy">Dribbble</a>
+<main class="">
+<section class="hero">
+    <div class="container text-left">
+        <h1 class="headline highlight font-bold relative">kate caloia</h1>
+        <h2 class="font-pop font-semi-bold tagline">designer + occasional developer + average DIYer</h2>
+        <p class="overview">Director of Product Design at WebstaurantStore. I lead 30+ awesome humans on a quest to help people run their business more profitabily and efficiently. I like reading and watching hockey (go rangers).</p>
+        <nav>
+            <ul class="social-links">
+                <li><a href="https://dribbble.com/katecaloia" target="_blank" class="font-pop font-semi-bold link">Dribbble</a></li>
+                <li><a href="https://twitter.com/katecaloia" target="_blank" class="font-pop font-semi-bold link">Twitter</a></li>
+                <li><a href="https://www.linkedin.com/in/katecaloia/" target="_blank" class="font-pop font-semi-bold link">Linkedin</a></li>
+            </ul>
+        </nav>    
+    </div>
 </section>
+<section class="work container">
+
+    <div id="shots" class="dribbble-container"></div>
+
+</section>
+   
+ 
+
+    
+
+
+
 </main>
 </html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+    // Set the Access Token
+var accessToken = '1ef823e28c844505aa776c772bfd269ba12131b7539d053f7d9024fe563752c5';
+
+// Call Dribble v2 API
+$.ajax({
+    url: 'https://api.dribbble.com/v2/user/shots?access_token='+accessToken,
+    dataType: 'json',
+    type: 'GET',
+    success: function(data) {  
+      if (data.length > 0) { 
+        $.each(data.reverse(), function(i, val) {                
+          $('#shots').prepend(
+            '<a class="dribbble-sneak" target="_blank" href="'+ val.html_url +'" title="' + val.title + '"><img class="dribbble-img" src="'+ val.images.hidpi +'"/><p class="dribbble-title">' + val.title + '</p></a>'
+            )
+        })
+      }
+      else {
+        $('#shots').append('<p>No shots yet!</p>');
+      }
+    }
+});
+</script>
