@@ -160,12 +160,17 @@ p, ul, h1, h2, h3, h4 {margin: 0;}
 .headline {
     position: relative;
     z-index: 5;
-    font-size: 6rem;
+    font-size: 4rem;
     line-height: 1;
     margin: 0 auto;
     letter-spacing: -2px;
     color: #fff;
     text-wrap: balance;
+
+    @media (min-width: 600px) {
+        font-size: 6rem;
+        max-width: 800px;
+      }
 
     @media (min-width: 800px) {
       font-size: 8.5rem;
@@ -309,6 +314,7 @@ p, ul, h1, h2, h3, h4 {margin: 0;}
         flex: 0;
         max-width: 200px;
         margin-bottom: 20px;
+        align-self: center;
       
         @media (min-width: 599px) {
             margin-bottom: 0;
@@ -324,8 +330,13 @@ p, ul, h1, h2, h3, h4 {margin: 0;}
 .about-headline {
     position: relative;
     z-index: 3;
-    font-size: 1.4rem;
-    line-height: 1.3;
+    font-size: 1rem;
+    line-height: 1.1;
+
+    @media (min-width: 599px) {
+        font-size: 1.4rem;
+        line-height: 1.3;
+    } 
 }
 
 .about-copy {
