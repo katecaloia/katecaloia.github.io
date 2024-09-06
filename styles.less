@@ -1,6 +1,40 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800;900&family=Space+Mono:wght@400;700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
+
+.pirata-one-regular {
+    font-family: "Pirata One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+.space-mono-regular {
+    font-family: "Space Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .space-mono-bold {
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .space-mono-regular-italic {
+    font-family: "Space Mono", monospace;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .space-mono-bold-italic {
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+
 body {
     background: #ffffff;
     color: #3E4658;
@@ -87,7 +121,7 @@ p, ul, h1, h2, h3, h4 {margin: 0;}
 
 .logo {
     color: #fff;
-    font-size: 3rem;
+    font-size: 2rem;
     line-height: 1;
     position: relative;
     padding-left: 15px;
@@ -96,10 +130,10 @@ p, ul, h1, h2, h3, h4 {margin: 0;}
     &::after {
         content:'...';
         position: absolute;
-        font-size: 30px;
+        font-size: 20px;
         transform: rotate(90deg);
         margin: auto 0;
-        left: -10px;
+        left: -4px;
         top: 0;
         bottom: 0;
         color: #E8B93D;
@@ -113,34 +147,54 @@ p, ul, h1, h2, h3, h4 {margin: 0;}
 .introduction {
     display: flex;
     flex-direction: column;
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-    text-align: left;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    text-align: center;
 
-    @media (min-width: 599px) {
-        text-align: center;
-    }
+    @media (min-width: 800px) {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+      }
 }
 
 .headline {
-    font-size: 4rem;
+    position: relative;
+    z-index: 5;
+    font-size: 6rem;
     line-height: 1;
-    margin: 0;
+    margin: 0 auto;
     letter-spacing: -2px;
     color: #fff;
     text-wrap: balance;
 
-    @media (min-width: 599px) {
-      font-size: 6rem;
+    @media (min-width: 800px) {
+      font-size: 8.5rem;
+      max-width: 800px;
     }
 }
 
 .subheadline {
+    position: relative;
+    z-index: 2;
     font-size: 1rem;
     line-height: 1;
+    text-transform: uppercase;
     margin: 0 0 1rem 0;
-    color: #F3BF36;
-    order: 2;
+    padding: 1rem;
+    color: #0a0b10;
+    align-self: center;
+    transform: rotate(-.8deg);
+
+    &::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        background:#7d8fb8;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 95%;
+    }
 
     @media (min-width: 599px) {
       font-size: 1.5rem;
@@ -196,6 +250,7 @@ p, ul, h1, h2, h3, h4 {margin: 0;}
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-gap: .5rem;
     align-content: stretch;
+    min-height: 400px;
     background: #fff;
     padding: 2rem;
     border-radius: 8px;
@@ -204,9 +259,18 @@ p, ul, h1, h2, h3, h4 {margin: 0;}
 
     @media (min-width: 599px) {
       grid-gap: 1rem;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
+    @media (min-width: 800px) {
+        grid-gap: 1rem;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+}
+
+.dribbble-sneak {
+    background: #f1f1f5;
 }
 
 .dribbble-sneak:first-of-type {
@@ -232,18 +296,29 @@ p, ul, h1, h2, h3, h4 {margin: 0;}
     padding-bottom: 4rem;
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    @media (min-width: 599px) {
+        flex-direction: row;
+    }  
     
 
     img {
         border-radius: 24px;
-        flex: 1 1 auto;
-        //max-width: 250px;
-        margin-right: 20px;
+        flex: 0;
+        max-width: 200px;
+        margin-bottom: 20px;
+      
+        @media (min-width: 599px) {
+            margin-bottom: 0;
+            margin-right: 20px;
+        } 
     }
 }
 
 .about-guts {
-    flex-grow: 3;
+    max-width: 600px;
 }
 
 .about-headline {
@@ -251,12 +326,10 @@ p, ul, h1, h2, h3, h4 {margin: 0;}
     z-index: 3;
     font-size: 1.4rem;
     line-height: 1.3;
-    max-width: 900px;
 }
 
 .about-copy {
     margin-top: 12px;
     font-size: 1rem;
     line-height: 1.4;
-    max-width: 900px;
 }
